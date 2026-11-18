@@ -1,0 +1,138 @@
+<view class="page">
+  <view class="topbar" style="padding-top: {{statusBarHeight}}px;">
+    <view class="topbar-title">软洋羊 · 慢慢牧场</view>
+  </view>
+
+  <view class="page-content">
+    <view class="pet-info-card">
+      <view class="pet-info-heading">
+        <view>
+          <view class="pet-name">软洋羊</view>
+          <view class="pet-subtitle">今天也一起慢慢长大</view>
+        </view>
+        <view class="level-badge">Lv.3</view>
+      </view>
+
+      <view class="experience-labels">
+        <text>成长经验</text>
+        <text>{{experience}} / {{experienceMax}}</text>
+      </view>
+      <view class="progress-track">
+        <view class="progress-value" style="width: {{experiencePercent}}%;"></view>
+      </view>
+    </view>
+
+    <view class="stage">
+      <view class="stage-cloud cloud-left">☁️</view>
+      <view class="stage-cloud cloud-right">☁️</view>
+      <view class="stage-flower flower-left">✿</view>
+      <view class="stage-flower flower-right">✿</view>
+      <view class="stage-grass grass-left">🌱</view>
+      <view class="stage-grass grass-right">🌱</view>
+
+      <view
+        class="sheep {{isEnlarged ? 'sheep-enlarged' : ''}}"
+        hover-class="sheep-pressed"
+        bindtap="onSheepTap"
+      >
+        <view class="sheep-circle">
+          <text class="sheep-emoji">🐑</text>
+        </view>
+      </view>
+
+      <view wx:if="{{speechText}}" class="speech-bubble">{{speechText}}</view>
+      <view wx:else class="speech-bubble">今天也见到你啦</view>
+    </view>
+
+    <view class="status-row">
+      <view class="status-card">
+        <view class="status-heading">
+          <view class="status-label">
+            <text class="status-icon intimacy-icon">♡</text>
+            <text>亲密度</text>
+          </view>
+          <text class="status-value">{{intimacy}}</text>
+        </view>
+        <view class="status-track">
+          <view class="status-progress intimacy-progress" style="width: {{intimacy}}%;"></view>
+        </view>
+      </view>
+
+      <view class="status-card">
+        <view class="status-heading">
+          <view class="status-label">
+            <text class="status-icon mood-icon">☺</text>
+            <text>心情值</text>
+          </view>
+          <text class="status-value">{{mood}}</text>
+        </view>
+        <view class="status-track">
+          <view class="status-progress mood-progress" style="width: {{mood}}%;"></view>
+        </view>
+      </view>
+    </view>
+
+    <view class="actions">
+      <view class="action-row">
+        <button
+          class="action-card feed-card"
+          hover-class="action-hover"
+          bindtap="showFeatureToast"
+          data-feature="喂食"
+        >
+          <view class="action-icon">🍎</view>
+          <text class="action-label">喂食</text>
+          <text class="action-arrow">›</text>
+        </button>
+        <button
+          class="action-card pet-card"
+          hover-class="action-hover"
+          bindtap="showFeatureToast"
+          data-feature="摸头"
+        >
+          <view class="action-icon">❤️</view>
+          <text class="action-label">摸头</text>
+          <text class="action-arrow">›</text>
+        </button>
+      </view>
+
+      <view class="action-row">
+        <button
+          class="action-card chat-card"
+          hover-class="action-hover"
+          bindtap="showFeatureToast"
+          data-feature="聊天"
+        >
+          <view class="action-icon">💬</view>
+          <text class="action-label">聊天</text>
+          <text class="action-arrow">›</text>
+        </button>
+        <button
+          class="action-card task-card"
+          hover-class="action-hover"
+          bindtap="showFeatureToast"
+          data-feature="任务"
+        >
+          <view class="action-icon">⭐</view>
+          <text class="action-label">任务</text>
+          <text class="action-arrow">›</text>
+        </button>
+      </view>
+    </view>
+  </view>
+
+  <view class="bottom-nav">
+    <view class="nav-item nav-active">
+      <text class="nav-icon">🏡</text>
+      <text>牧场</text>
+    </view>
+    <view class="nav-item">
+      <text class="nav-icon">🗓️</text>
+      <text>日常</text>
+    </view>
+    <view class="nav-item">
+      <text class="nav-icon">🐑</text>
+      <text>我的</text>
+    </view>
+  </view>
+</view>

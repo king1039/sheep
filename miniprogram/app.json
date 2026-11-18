@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundColor": "#FFF9F1",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFF9F1",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "软洋羊",
+    "navigationStyle": "default"
+  },
+  "style": "v2"
+}
